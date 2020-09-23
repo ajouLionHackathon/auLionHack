@@ -19,9 +19,6 @@
 templates
 
 | -----앱이름
-
 | -----앱이름
-
 | -----Trouble
-
-	|------ write_Trouble.html
+     |------ write_Trouble.html
