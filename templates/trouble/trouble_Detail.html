@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여러분의 고민 worrior가 해결하겠습니다.</title>
+</head>
+<body>
+    <h1>{{ trouble.title }}</h1>
+
+    <div>{{ trouble.body }}</div>
+
+
+    <h5>{{ trouble.tr_comment_set.count }}</h5> <!--여기서 tr_comment_set은 우리가 모델에서 trouble과 tr_comment를 FK로 연결해줬으니까 사용할 수 있는것 즉 trouble한테 tr_comment가 종속되었으니까 그것의 집합이라고 생각 -->
+    <div>
+        <ul>
+            {% for comment in trouble.tr_comment_set.all %}
+                <li>{{ comment.body }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+ <!--form 형식에는 csrf를 넣어주는게 좋다고 해요-->
+    <form action="{% url 'trouble:comment_Create' trouble.id %}" method="post">
+        {% csrf_token %}
+        <textarea name="body" id="body" rows="15"></textarea>
+        <input type="submit" value="댓글등록"/>
+   </form>
+</body>
+</html>

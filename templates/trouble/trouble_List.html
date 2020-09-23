@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Trouble List</title>
+</head>
+<body>
+    {% if trouble_List %}
+        <ul>
+            {% for trouble in trouble_List %}
+                <li>
+                    <a href="{% url 'trouble:detail_Trouble' trouble.id %}">{{ trouble.title }}</a> <!-- 여기서 trouble: 써준건 urls.py에 설명을 써놓았으니 읽어주세요 그리고 여기서 id를 쓸수 있는건 자동적으로  model에 생성하면 id는 만들어집니다. 1,2,3 이렇게 -->
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>고민이 없습니다.</p>
+    {% endif %}
+
+</body>
+</html>
