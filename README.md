@@ -16,12 +16,13 @@
 * templates 을 앱 밖에다 만들고 그안에 앱이름 그안에 템플릿 넣어주시면 됩니다.!!
 * Ex 
 
-templates
+> templates
+>
+> > 앱이름
+> >
+> > 앱이름
+> >
+> > Trouble
+> >
+> > > write_Trouble.html
 
-​    | -----앱이름
-
-​	| -----앱이름
-
-​	| -----Trouble
-
-​				|------ write_Trouble.html
