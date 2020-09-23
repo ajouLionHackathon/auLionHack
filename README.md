@@ -8,3 +8,20 @@
 로그인/회원가입 링크2 : [초보몽키](https://wayhome25.github.io/django/2017/03/01/django-99-my-first-project-2/)
 <br><br>
 조만간 secret key 분리해야함. 이번주 안에 시행할 것임. [초보몽키](https://wayhome25.github.io/django/2017/07/11/django-settings-secret-key/)
+
+---------------
+
+#### Templates 
+
+* templates 을 앱 밖에다 만들고 그안에 앱이름 그안에 템플릿 넣어주시면 됩니다.!!
+* Ex 
+
+templates
+
+​    | -----앱이름
+
+​	| -----앱이름
+
+​	| -----Trouble
+
+​				|------ write_Trouble.html
