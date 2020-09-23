@@ -18,10 +18,10 @@
 
 templates
 
-​ | -----앱이름
+| -----앱이름
 
-​	| -----앱이름
+| -----앱이름
 
-​	| -----Trouble
+| -----Trouble
 
-​				</t>|------ write_Trouble.html
+		</t>|------ write_Trouble.html
