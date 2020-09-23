@@ -10,6 +10,19 @@
 조만간 secret key 분리해야함. 이번주 안에 시행할 것임. [초보몽키](https://wayhome25.github.io/django/2017/07/11/django-settings-secret-key/)
 
 ---------------
+<br>
+#### Branch 할당
+- master : 배포 브랜치
+- common : 공통적으로 변동하는 사항만 관리하는 브랜치 
+- mainpage : 메인페이지에 대해서 관리하는 브랜치 : 승욱, 호연
+- trouble : 고민글에 대한 브랜치 : 영윤, 유림, 규리
+- account : 로그인/회원가입에 대한 브랜치 : 소연
+
+#### Branch Rule
+- 1. Pull Request 필요
+- 2. 기본 브랜치(master,common,mainpage,trouble,account)에 대해서 바로 push 불가능, Pull Request에 지정한 Reviewer가 허용을 할 시에만 push 가능
+- 3. master : 배포 브랜치이므로 모두의 작업이 끝났을 때 그제서야 merge시행할 것임. 
+---------------
 
 #### Templates 
 
