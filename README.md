@@ -24,4 +24,4 @@ templates
 
 | -----Trouble
 
-		</t>|------ write_Trouble.html
+	|------ write_Trouble.html
