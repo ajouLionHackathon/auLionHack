@@ -59,6 +59,10 @@
 
 ![image](https://user-images.githubusercontent.com/49120090/94160614-c117ea00-febf-11ea-8ea1-1b3fb344d30f.png)
 
+그 다음에 꼭 branch 지워주기.
+
+![image](https://user-images.githubusercontent.com/49120090/94160924-2075fa00-fec0-11ea-8dc8-98ab373a14f5.png)
+
 
 
 ---------------
