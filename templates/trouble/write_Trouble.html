@@ -8,6 +8,25 @@
 
 <body>
     <h1>환영합니다.</h1>
+    <form action="">
+        <label for="category">카테고리 :</label>
+        <select name="category" id="category">
+            <!--고민글 카테고리 셀렉트 박스 옵션 추후에 추가 및 수정 해주세용-->
+            <option value="">학업</option>
+            <option value="">연애</option>
+            <option value="">취업</option>
+        </select>
+        <br>
+        <label for="drawing_Filter">그림 받기 여부 :</label>
+        <input type="checkbox" name="drawing_Filter" value="yes"><label for="drawing_Filter">yes</label>
+        <input type="checkbox" name="drawing_Filter" value="no"><label for="drawing_Filter">no</label>
+        <br>
+        <textarea name="title" id="title" placeholder="제목을 작성하세요." cols="30" rows="1"></textarea>
+        <br>
+        <textarea name="body" id="body" placeholder="내용을 작성하세요." cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit" value="작성하기">
+    </form>
 </body>
 
 </html>
