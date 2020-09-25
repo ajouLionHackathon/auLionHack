@@ -4,5 +4,6 @@ from trouble import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('trouble/',include(urls)),
+    path('trouble/', include(urls)),
+    path('account/', include('account.urls')),
 ]
