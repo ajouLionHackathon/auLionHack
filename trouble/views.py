@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.utils import timezone
-from .models import Trouble
+from .models import Trouble,Tr_Comment
 # Create your views here.
+
 def write_Trouble(request):
     return render(request,'trouble/write_Trouble.html')
 
@@ -23,5 +24,23 @@ def comment_Create(request, trouble_id):
     댓글 등록
     """
     trouble=get_object_or_404(Trouble,pk=trouble_id)
-    trouble.tr_comment_set.create(body=request.POST.get('body'),create_Date=timezone.now())
+    if request.method == "POST":
+        trouble.tr_comment_set.create(body=request.POST.get('body'),create_Date=timezone.now())
+    return redirect('trouble:detail_Trouble',trouble_id=trouble.id)
+
+def comment_Update(request, trouble_id, comment_id):
+    trouble=get_object_or_404(Trouble, pk=trouble_id)
+    comment=get_object_or_404(Tr_Comment, pk=comment_id)
+    #User.objects.get으로 username 받아와야 함
+    # 기획적 측면에서 상의할 것이 있어 우선 비워둡니다.
+    # if request.method == "POST":
+    return redirect('trouble:detail_Trouble',trouble_id=trouble.id)
+
+def comment_Delete(request, trouble_id, comment_id):
+    trouble=get_object_or_404(Trouble, pk=trouble_id)
+    comment=get_object_or_404(Tr_Comment, pk=comment_id)
+    #User.objects.get으로 username 받아와야 함
+    if request.method == "POST":
+        #user가 만든 유저이면
+        comment.delete()
     return redirect('trouble:detail_Trouble',trouble_id=trouble.id)
