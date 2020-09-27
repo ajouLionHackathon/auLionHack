@@ -14,7 +14,15 @@
     <div>
         <ul>
             {% for comment in trouble.tr_comment_set.all %}
+                <!-- hidden 속성으로 user에 따라 수정,삭제 보이는거 조절해야함. -->
                 <li>{{ comment.body }}</li>
+                <button type="button">
+                    <a href="">수정</a>
+                </button>
+                <form action="{% url 'trouble:comment_Delete' trouble.id comment.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">삭제</button>
+                </form>
             {% endfor %}
         </ul>
     </div>
@@ -22,8 +30,9 @@
 
  <!--form 형식에는 csrf를 넣어주는게 좋다고 해요-->
     <form action="{% url 'trouble:comment_Create' trouble.id %}" method="post">
+    <!-- <form action="" method="post"> -->
         {% csrf_token %}
-        <textarea name="body" id="body" rows="15"></textarea>
+        <textarea rows="15" name="body" id="body"></textarea>
         <input type="submit" value="댓글등록"/>
    </form>
 </body>
