@@ -1,39 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
     <meta charset="UTF-8">
     <title>여러분의 고민 worrior가 해결하겠습니다.</title>
 </head>
 <body>
-    <h1>{{ trouble.title }}</h1>
+    <div class="container my-3">
+        <h2 class="border-bottom py-2">{{ trouble.title }}</h2>
+        <div class="card my-3">
+            <div class="card-body">
+                <div class="card-text" > {{trouble.body }}</div>
+                <div class="d-flex justify-content-end">
+                    <div class="badge badge-light p-2">
+                        {{ trouble.create_Date }}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div>{{ trouble.body }}</div>
+        <h5 class="border-bottom my-3 py-2">{{ trouble.tr_comment_set.count }}</h5>
+         {% for comment in trouble.tr_comment_set.all %}
+         <div class="card my-3">
+            <div class="card-body">
+                <div class="card-text">{{ comment.body }}</div>
+                <div class="d-flex justify-content-end">
+                    <div class="badge badge-light p-2">
+                        {{ comment.created_Date }}
+                    </div>
+                </div>
+            </div>
+         </div>
+        {% endfor %}
 
 
-    <h5>{{ trouble.tr_comment_set.count }}</h5> <!--여기서 tr_comment_set은 우리가 모델에서 trouble과 tr_comment를 FK로 연결해줬으니까 사용할 수 있는것 즉 trouble한테 tr_comment가 종속되었으니까 그것의 집합이라고 생각 -->
-    <div>
-        <ul>
-            {% for comment in trouble.tr_comment_set.all %}
-                <!-- hidden 속성으로 user에 따라 수정,삭제 보이는거 조절해야함. -->
-                <li>{{ comment.body }}</li>
-                <button type="button">
-                    <a href="">수정</a>
-                </button>
-                <form action="{% url 'trouble:comment_Delete' trouble.id comment.id %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit">삭제</button>
-                </form>
-            {% endfor %}
-        </ul>
+     <!--form 형식에는 csrf를 넣어주는게 좋다고 해요-->
+        <form action="{% url 'trouble:comment_Create' trouble.id %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <textarea name="body" id="body" rows="5" class="form-control"></textarea>
+            </div>
+            <input type="submit" value="댓글등록" class="btn btn-dark"/>
+       </form>
     </div>
-
-
- <!--form 형식에는 csrf를 넣어주는게 좋다고 해요-->
-    <form action="{% url 'trouble:comment_Create' trouble.id %}" method="post">
-    <!-- <form action="" method="post"> -->
-        {% csrf_token %}
-        <textarea rows="15" name="body" id="body"></textarea>
-        <input type="submit" value="댓글등록"/>
-   </form>
 </body>
 </html>
