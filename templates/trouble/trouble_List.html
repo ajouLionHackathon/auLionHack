@@ -1,21 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
     <meta charset="UTF-8">
     <title>Trouble List</title>
 </head>
+
 <body>
+
+    <div class ="container my-3">
+        <table class="table">
+            <thead>
+            <tr class="thead-dark">
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일시</th>
+            </tr>
+            </thead>
+        <tbody>
     {% if trouble_List %}
-        <ul>
-            {% for trouble in trouble_List %}
-                <li>
-                    <a href="{% url 'trouble:detail_Trouble' trouble.id %}">{{ trouble.title }}</a> <!-- 여기서 trouble: 써준건 urls.py에 설명을 써놓았으니 읽어주세요 그리고 여기서 id를 쓸수 있는건 자동적으로  model에 생성하면 id는 만들어집니다. 1,2,3 이렇게 -->
-                </li>
-            {% endfor %}
-        </ul>
+        {% for trouble in trouble_List %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{% url 'trouble:detail_Trouble' trouble.id %}">{{ trouble.title }}</a> </td><!-- 여기서 trouble: 써준건 urls.py에 설명을 써놓았으니 읽어주세요 그리고 여기서 id를 쓸수 있는건 자동적으로  model에 생성하면 id는 만들어집니다. 1,2,3 이렇게 -->
+                    <td>{{ trouble.create_Date }}</td>
+                </tr>
+        {% endfor %}
     {% else %}
-        <p>고민이 없습니다.</p>
+        <tr>
+            <td colspan="3">고민이 없습니다.</td>
+        </tr>
     {% endif %}
+            </tbody>
+        </table>
+    </div>
 
 </body>
+
 </html>
