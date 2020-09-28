@@ -101,7 +101,8 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+#models에서도 TIME_ZONE값을 적용하기 위함
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
