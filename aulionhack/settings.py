@@ -112,5 +112,5 @@ STATIC_URL = '/static/'
 
 #login logout
 LOGIN_URL = '/account/login/'
-LOGIN_REDIRECT_URL='/mainpage/mainpage'
-LOGOUT_REDIRECT_URL=None
+# LOGIN_REDIRECT_URL='/mainpage/mainpage'
+# LOGOUT_REDIRECT_URL=None
