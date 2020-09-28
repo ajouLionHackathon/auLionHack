@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'trouble.apps.TroubleConfig',
-    'account',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +70,7 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = 'account.User'
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -110,7 +109,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#login logout
-LOGIN_URL = '/account/login/'
-# LOGIN_REDIRECT_URL='/mainpage/mainpage'
-# LOGOUT_REDIRECT_URL=None
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
