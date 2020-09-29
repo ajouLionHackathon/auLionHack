@@ -45,9 +45,8 @@
 
 <img src="https://user-images.githubusercontent.com/49120090/94159954-1bfd1180-febf-11ea-90aa-c98bf4986a3e.png" width="400" height="300">
 
-![image-20200924234052750](/Users/uju_sy/Library/Application Support/typora-user-images/image-20200924234052750.png)
 
-이런식으로..~! 
+이런식으로..~ 
 
 그리고 저렇게 브랜치를 파고 커밋까지 다 완료해서 하나의 에픽을 끝냈으면 해당 브랜치로 풀리퀘를 날려주면돼.
 
