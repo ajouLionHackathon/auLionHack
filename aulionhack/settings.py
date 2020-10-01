@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'trouble.apps.TroubleConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,7 @@ DATABASES = {
     }
 }
 
-
+AUTH_USER_MODEL = 'account.User'
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -100,7 +101,6 @@ TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
 
 USE_L10N = True
-
 #models에서도 TIME_ZONE값을 적용하기 위함
 USE_TZ = False
 
