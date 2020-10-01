@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'trouble.apps.TroubleConfig',
     'account.apps.AccountConfig',
+    'mypage.apps.MypageConfig',
 ]
 
 MIDDLEWARE = [
