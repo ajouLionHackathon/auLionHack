@@ -13,11 +13,12 @@ def write_Trouble(request):
             trouble.create_Date = timezone.now()
             trouble.save()
             # 저장 성공 후 어디로 갈건지 안 정해서 일단 전체 고민글 보기 페이지로 가게 함
-            return redirect('read_Trouble')
+            return redirect('trouble:read_Trouble')
 
-        else:
-            form = TroubleForm()
-            return render(request, 'trouble/write_Trouble.html')
+    else:
+        form = TroubleForm()
+        form = {'form':form}
+        return render(request, 'trouble/write_Trouble.html',form)
 
 
 def read_Trouble(request):
